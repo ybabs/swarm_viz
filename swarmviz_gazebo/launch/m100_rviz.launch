@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding = "UTF-8"?>
+<launch>
+     <arg name="mav_name" default="m100"/>
+    <arg name="namespace" default="$(arg mav_name)"/>
+    <arg name="model" default="$(find m100_description)/urdf/m100.xacro"/>
+    <arg name="world" default="empty"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="x" default="3.0"/>
+    <arg name="y" default="3.0"/>
+    <arg name="z" default="3.0"/>
+    <arg name="tf_prefix" default="$(optenv ROS_NAMESPACE)"/>
+    <arg name="world_frame" default="world"/> 
+    <arg name="base_link_frame" default="$(arg tf_prefix)/base_link"/>
+    <arg name="rviz_config" default="$(find m100_description)/rviz/urdf.rviz"/>
+
+
+  <group ns="matrice100">
+
+
+
+  </group>
+
+  <group ns="a3">
+
+
+
+  </group>
+
+
+  <group ns="n3">
+
+
+
+  </group>
+
+
+
+
+  
+  <param name="robot_description" command="
+   $(find xacro)/xacro '$(arg model)' 
+   base_link_frame:=$(arg base_link_frame) 
+   world_frame:=$(arg world_frame)
+   mav_name:=$(arg mav_name)
+   namespace:=$(arg namespace)" 
+   />
+
+  <param name="tf_prefix" type="string" value="$(arg tf_prefix)"/>
+  <param name="base_link_frame" type="string" value="$(arg base_link_frame)"/>
+  <param name="world_frame" type="string" value="$(arg world_frame)"/>
+
+  <!-- Spawn robot -->
+  <node name="spawn_uav" pkg="gazebo_ros" type="spawn_model"  
+  args=" -urdf 
+         -param robot_description 
+         -x $(arg x) 
+         -y $(arg y) 
+         -z $(arg z) 
+         -model $(arg namespace)" >
+  </node>  
+
+  <!-- publish all the frames to TF -->
+  <!-- https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png -->
+   <!-- https://tile.openstreetmap.org/{z}/{x}/{y}.png -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+      <param name="publish_frequency" value="50"/> <!-- Hz -->
+    </node>
+     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find m100_gazebo)/launch/view.rviz"/>
+
+
+</launch>

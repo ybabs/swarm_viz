@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="dji_odom_adapter" pkg="dji_odom_adapter" type="dji_odom_publisher" output="screen">
+    </node>
+
+</launch>
