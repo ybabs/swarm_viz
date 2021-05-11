@@ -42,7 +42,7 @@
     <link name="${robot_namespace}/base_link"></link>
 
     <joint name="${robot_namespace}/base_joint" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="${origin_x} ${origin_y} ${origin_z}" rpy="0 0 0" />
       <parent link="${robot_namespace}/base_link" />
       <child link="${robot_namespace}/base_link_inertia" />
     </joint>
@@ -50,12 +50,12 @@
     <link name="${robot_namespace}/base_link_inertia">
       <inertial>
         <mass value="${mass}" />  <!-- [kg] -->
-        <origin xyz="0 0 0" />
+        <origin xyz="${origin_x} ${origin_y} ${origin_z}" />
         <xacro:insert_block name="inertia" />
       </inertial>
 
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="${origin_x} ${origin_y} ${origin_z}" rpy="0 0 0" />
         <geometry>
           <xacro:if value="${use_mesh_file}">
             <mesh filename="${mesh_file}" scale="1 1 1" />
@@ -67,7 +67,7 @@
       </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+       <origin xyz="${origin_x} ${origin_y} ${origin_z}" rpy="0 0 0" />
         <geometry>
           <box size="${body_width} ${body_width} ${body_height}" /> <!-- [m] [m] [m] -->
         </geometry>
@@ -108,7 +108,7 @@
               scale="1 1 1" />
           </xacro:if>
           <xacro:unless value="${use_own_mesh}">
-            <mesh filename="package://m100_description/meshes/propeller_${direction}.dae"
+            <mesh filename="package://swarmviz_description/meshes/propeller_${direction}.dae"
               scale="${radius_rotor} ${radius_rotor} ${radius_rotor}" /> <!-- The propeller meshes have a radius of 1m -->
             <!-- <box size="${2*radius_rotor} 0.01 0.005"/> -->
           </xacro:unless>

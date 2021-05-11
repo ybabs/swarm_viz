@@ -8,8 +8,12 @@ Panels:
         - /Status1
         - /AerialMapDisplay1
         - /RobotModel1
-        - /RobotModel1/Status1
         - /Odometry1
+        - /RobotModel2
+        - /RobotModel3
+        - /RobotModel3/Links1
+        - /RobotModel3/Links1/a3/base_link1
+        - /RobotModel3/Links1/a3/base_link1/Position1
       Splitter Ratio: 0.5
     Tree Height: 755
   - Class: rviz/Selection
@@ -76,37 +80,37 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        m100/base_link:
+        n3/base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        m100/base_link_inertia:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        m100/rotor_0:
+        n3/base_link_inertia:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        m100/rotor_1:
+        n3/rotor_0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        m100/rotor_2:
+        n3/rotor_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        m100/rotor_3:
+        n3/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        n3/rotor_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
       Name: RobotModel
-      Robot Description: robot_description
+      Robot Description: /n3/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -116,6 +120,18 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        a3/base_link:
+          Value: true
+        a3/base_link_inertia:
+          Value: true
+        a3/rotor_0:
+          Value: true
+        a3/rotor_1:
+          Value: true
+        a3/rotor_2:
+          Value: true
+        a3/rotor_3:
+          Value: true
         m100/base_link:
           Value: true
         m100/base_link_inertia:
@@ -130,6 +146,18 @@ Visualization Manager:
           Value: true
         map:
           Value: true
+        n3/base_link:
+          Value: true
+        n3/base_link_inertia:
+          Value: true
+        n3/rotor_0:
+          Value: true
+        n3/rotor_1:
+          Value: true
+        n3/rotor_2:
+          Value: true
+        n3/rotor_3:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -137,6 +165,17 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
+          a3/base_link:
+            a3/base_link_inertia:
+              {}
+            a3/rotor_0:
+              {}
+            a3/rotor_1:
+              {}
+            a3/rotor_2:
+              {}
+            a3/rotor_3:
+              {}
           m100/base_link:
             m100/base_link_inertia:
               {}
@@ -147,6 +186,17 @@ Visualization Manager:
             m100/rotor_2:
               {}
             m100/rotor_3:
+              {}
+          n3/base_link:
+            n3/base_link_inertia:
+              {}
+            n3/rotor_0:
+              {}
+            n3/rotor_1:
+              {}
+            n3/rotor_2:
+              {}
+            n3/rotor_3:
               {}
       Update Interval: 0
       Value: true
@@ -184,6 +234,96 @@ Visualization Manager:
       Topic: /dji_odom
       Unreliable: false
       Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        m100/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        m100/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        m100/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        m100/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        m100/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        m100/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /m100/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        a3/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        a3/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        a3/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        a3/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        a3/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        a3/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /a3/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -212,7 +352,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.203841686248779
+      Distance: 13.17568302154541
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1

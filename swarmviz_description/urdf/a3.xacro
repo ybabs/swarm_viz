@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="m100"  xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="a3"  xmlns:xacro="http://ros.org/wiki/xacro">
 <!-- Properties -->
 <xacro:property name="namespace" value="$(arg namespace)" />
   <xacro:property name="rotor_velocity_slowdown_sim" value="10" />
@@ -25,9 +25,10 @@
   <xacro:property name="sqrt2" value="1.4142135623730951" />
   <xacro:property name="rotor_drag_coefficient" value="8.06428e-05" />
   <xacro:property name="rolling_moment_coefficient" value="0.000001" />
-  <xacro:property name="origin_x" value="0" />
+  <xacro:property name="origin_x" value="7" />
   <xacro:property name="origin_y" value="0" />
-  <xacro:property name="origin_z" value="0.0" />
+  <xacro:property name="origin_z" value="0" />
+
 
   <!-- Property Blocks -->
 <xacro:property name = "body_inertia">

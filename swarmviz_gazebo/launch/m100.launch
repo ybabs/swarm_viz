@@ -2,7 +2,7 @@
 <launch>
      <arg name="mav_name" default="m100"/>
     <arg name="namespace" default="$(arg mav_name)"/>
-    <arg name="model" default="$(find m100_description)/urdf/m100.xacro"/>
+    <arg name="model" default="$(find swarmviz_description)/urdf/m100.xacro"/>
    <!-- <arg name="world" default="empty"/> -->
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>

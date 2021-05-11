@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="m100"  xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="n3"  xmlns:xacro="http://ros.org/wiki/xacro">
 <!-- Properties -->
 <xacro:property name="namespace" value="$(arg namespace)" />
   <xacro:property name="rotor_velocity_slowdown_sim" value="10" />

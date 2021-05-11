@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="m100" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="a3" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Instantiate drone  "mechanics" -->
   <xacro:include filename="$(find swarmviz_description)/urdf/m100.xacro" />
 
