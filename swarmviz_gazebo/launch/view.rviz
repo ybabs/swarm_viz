@@ -8,12 +8,10 @@ Panels:
         - /Status1
         - /AerialMapDisplay1
         - /RobotModel1
+        - /TF1
+        - /TF1/Frames1
         - /Odometry1
         - /RobotModel2
-        - /RobotModel3
-        - /RobotModel3/Links1
-        - /RobotModel3/Links1/a3/base_link1
-        - /RobotModel3/Links1/a3/base_link1/Position1
       Splitter Ratio: 0.5
     Tree Height: 755
   - Class: rviz/Selection
@@ -73,47 +71,18 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        n3/base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        n3/base_link_inertia:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        n3/rotor_0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        n3/rotor_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        n3/rotor_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        n3/rotor_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: /n3/robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
@@ -132,31 +101,7 @@ Visualization Manager:
           Value: true
         a3/rotor_3:
           Value: true
-        m100/base_link:
-          Value: true
-        m100/base_link_inertia:
-          Value: true
-        m100/rotor_0:
-          Value: true
-        m100/rotor_1:
-          Value: true
-        m100/rotor_2:
-          Value: true
-        m100/rotor_3:
-          Value: true
         map:
-          Value: true
-        n3/base_link:
-          Value: true
-        n3/base_link_inertia:
-          Value: true
-        n3/rotor_0:
-          Value: true
-        n3/rotor_1:
-          Value: true
-        n3/rotor_2:
-          Value: true
-        n3/rotor_3:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -175,28 +120,6 @@ Visualization Manager:
             a3/rotor_2:
               {}
             a3/rotor_3:
-              {}
-          m100/base_link:
-            m100/base_link_inertia:
-              {}
-            m100/rotor_0:
-              {}
-            m100/rotor_1:
-              {}
-            m100/rotor_2:
-              {}
-            m100/rotor_3:
-              {}
-          n3/base_link:
-            n3/base_link_inertia:
-              {}
-            n3/rotor_0:
-              {}
-            n3/rotor_1:
-              {}
-            n3/rotor_2:
-              {}
-            n3/rotor_3:
               {}
       Update Interval: 0
       Value: true
@@ -237,47 +160,18 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        m100/base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        m100/base_link_inertia:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        m100/rotor_0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        m100/rotor_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        m100/rotor_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        m100/rotor_3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: /m100/robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Alpha: 1
       Class: rviz/RobotModel
@@ -352,25 +246,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 13.17568302154541
+      Distance: 12.930904388427734
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: -1.3916995525360107
+        Y: 4.893237113952637
+        Z: -5.356515407562256
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5753985047340393
+      Pitch: 0.6047608256340027
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.613583087921143
+      Yaw: 5.181596755981445
     Saved: ~
 Window Geometry:
   Displays:

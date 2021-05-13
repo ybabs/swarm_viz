@@ -23,22 +23,30 @@
 #include <djiosdk/dji_vehicle.hpp>
 #include "dji_sdk/dji_sdk.h"
 
-class Dji_odom_adapter
+class TFAdapter
 {
     public:
-     Dji_odom_adapter();
+     TFAdapter();
      void attitude_callback(const geometry_msgs::QuaternionStamped::ConstPtr& msg);
      void imu_callback(const sensor_msgs::Imu::ConstPtr& msg);
      void velocity_callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
      void local_position_callback(const geometry_msgs::PointStamped::ConstPtr& msg);
      void gps_callback(const sensor_msgs::NavSatFix::ConstPtr& msg);
+
+     void n3OdometryCallback(const nav_msgs::Odometry::ConstPtr& msg);
+     void a3OdometryCallback(const nav_msgs::Odometry::ConstPtr& msg);
+     
+
+
      void publish_odom(); 
      bool set_local_position();
-     void publish_transform();
+     void publishM100Transform();
+     void publishN3Transform();
+     void publishA3Transform();
 
-     void drone_activate();
-     void obtain_control();
-     void publish_path();
+     //void drone_activate();
+     //void obtain_control();
+    // void publish_path();
 
 
     private:
@@ -56,13 +64,29 @@ class Dji_odom_adapter
     geometry_msgs::TransformStamped odom_transform;
     tf::TransformBroadcaster odom_broadcaster;
 
+    geometry_msgs::TransformStamped n3_odom_transform;
+    tf::TransformBroadcaster n3_odom_broadcaster;
+
+    geometry_msgs::TransformStamped a3_odom_transform;
+    tf::TransformBroadcaster a3_odom_broadcaster;
+
+
+
+    nav_msgs::Odometry a3_odom_data;
+    nav_msgs::Odometry n3_odom_data;
+
+
     ros::Subscriber attitude_sub;
     ros::Subscriber position_sub;
     ros::Subscriber velocity_sub;
     ros::Subscriber imu_sub;
     ros::Subscriber gps_sub;
+    ros::Subscriber n3_sub;
+    ros::Subscriber a3_sub;
 
     ros::ServiceClient set_local_pos_reference;
+    ros::ServiceClient A3_reference;
+    ros::ServiceClient N3_reference;
     ros::ServiceClient sdk_ctrl_authority_service;
     ros::ServiceClient drone_task_service;
     ros::ServiceClient query_version_service;

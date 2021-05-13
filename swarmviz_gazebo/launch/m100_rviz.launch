@@ -12,7 +12,7 @@
 
 
 
-  <group ns="m100">
+  <!-- <group ns="m100">
     <include file="$(find swarmviz_gazebo)/launch/spawn_uav.launch">
       <arg name="mav_name" value="m100"/>
       <arg name="enable_logging" value="$(arg enable_logging)"/>
@@ -24,7 +24,7 @@
     </include>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
      <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
-  </group>
+  </group> -->
 
   <group ns="a3">
       <include file="$(find swarmviz_gazebo)/launch/spawn_uav.launch">
@@ -40,7 +40,7 @@
      <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
   </group>
 
-  <group ns="n3">
+  <!-- <group ns="n3">
       <include file="$(find swarmviz_gazebo)/launch/spawn_uav.launch">
       <arg name="mav_name" value="n3"/>
       <arg name="enable_logging" value="$(arg enable_logging)"/>
@@ -52,23 +52,25 @@
     </include>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
      <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
-  </group>
+  </group>  -->
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find swarmviz_gazebo)/launch/view.rviz"/>  
-   <node pkg="tf"
+     <!-- <node pkg="tf"
         type="static_transform_publisher"
         name="link1_broadcaster"
-        args="0 0 0 0 0 0 map m100/base_link 100" />
-
+        args="0 0 0 0 0 0 map m100/base_link 100" />  -->
+<!-- 
     <node pkg="tf"
         type="static_transform_publisher"
         name="link2_broadcaster"
-        args="0 0 0 0 0 0 map a3/base_link 100" />
-
+        args="0 0 0 0 0 0 map a3/base_link 100" /> -->
+<!-- 
     <node pkg="tf"
         type="static_transform_publisher"
         name="link3_broadcaster"
-        args="0 0 0 0 0 0 map n3/base_link 100" />
+        args="0 0 0 0 0 0 map n3/base_link 100" /> -->
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find swarmviz_gazebo)/launch/view.rviz"/>  
+
 
 
 </launch>

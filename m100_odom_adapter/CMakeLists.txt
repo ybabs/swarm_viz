@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(m100_odom_adapter)
+project(m100_odom)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
  #add_compile_options(-std=c++11)
@@ -47,16 +47,16 @@ include_directories(
 )
 
 
-add_executable(dji_odom_publisher src/odom_msg_adapter.cpp )
+add_executable(${PROJECT_NAME}_node  src/odom_msg_adapter.cpp )
 
 
-target_link_libraries(dji_odom_publisher
+target_link_libraries(${PROJECT_NAME}_node 
 		${catkin_LIBRARIES}
 		${EIGEN_LIBRARIES}
                 ${DJIOSDK_LIBRARIES}
 		)
 
-add_dependencies(dji_odom_publisher dji_sdk_generate_messages_cpp)
+# add_dependencies(${PROJECT_NAME}_node  ${PROJECT_NAME}_generate_messages_cpp)
 
 install(DIRECTORY launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
